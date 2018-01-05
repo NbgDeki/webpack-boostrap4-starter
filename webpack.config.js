@@ -1,3 +1,9 @@
-/**
- * Created by Nebojsa on 1/5/2018. test
- */
+var path = require('path');
+
+module.exports = {
+    entry: './src/app.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js'
+    }
+};
