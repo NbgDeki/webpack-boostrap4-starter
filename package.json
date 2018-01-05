@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/nesacar/webpack-boostrap4-starter/issues"
   },
-  "homepage": "https://github.com/nesacar/webpack-boostrap4-starter#readme"
+  "homepage": "https://github.com/nesacar/webpack-boostrap4-starter#readme",
+  "devDependencies": {
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
+  }
 }
