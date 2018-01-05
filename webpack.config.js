@@ -6,16 +6,19 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var webpack = require('webpack');
 
-var extractPlugin = new ExtractTextPlugin({
-    filename: 'main.css'
+var extractPlugin = new ExtractTextPlugin("[name].bundle.css", {
+    //filename: 'main.css'
 });
 
 module.exports = {
-    entry: './src/js/app.js',
+    entry: {
+        app: './src/js/app.js',
+        about: './src/js/about.js'
+    },
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
-        //publicPath: '/dist'
+        path: path.join(__dirname, "dist"),
+        filename: "[name].bundle.js",
+        chunkFilename: "[id].chunk.js"
     },
     module: {
         rules: [
@@ -48,40 +51,8 @@ module.exports = {
                         },
                         'sass-loader'
                     ],
-                    /*use: [
-                        {
-                            loader: 'css-loader'
-                        },
-                        {
-                            loader: 'postcss-loader', // Run post css actions
-                            options: {
-                                plugins: function () { // post css plugins, can be exported to postcss.config.js
-                                    return [
-                                        require('precss'),
-                                        require('autoprefixer')
-                                    ];
-                                }
-                            }
-                        },
-                        {
-                            loader: 'sass-loader'
-                        }
-                    ]*/
                 })
             },
-            /*{
-                test: /\.html$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].[ext]',
-                            outputPath: '/',
-                        }
-                    }
-                ],
-                exclude: path.resolve(__dirname, 'src/index.html')
-            },*/
             {
                 test: /\.html$/,
                 use: ['html-loader']
@@ -112,13 +83,18 @@ module.exports = {
         extractPlugin,
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: 'src/index.html'
+            template: 'src/index.html',
+            chunks: ['app']
         }),
         new HtmlWebpackPlugin({
             filename: 'users.html',
             template: 'src/users.html',
-            chunks: []
+            chunks: ['about']
         }),
-        new CleanWebpackPlugin(['dist'])
+        new webpack.optimize.CommonsChunkPlugin({
+            name: "commons",
+            filename: "commons.js"
+        }),
+        new CleanWebpackPlugin('dist')
     ]
 };
