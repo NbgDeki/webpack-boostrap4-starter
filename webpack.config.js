@@ -83,17 +83,16 @@ module.exports = {
         extractPlugin,
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: 'src/index.html',
-            chunks: ['app']
+            template: 'src/index.html'
         }),
         new HtmlWebpackPlugin({
             filename: 'users.html',
-            template: 'src/users.html',
-            chunks: ['about']
+            template: 'src/users.html'
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: "commons",
-            filename: "commons.js"
+            filename: "commons.js",
+            chunks: ['app', 'about']
         }),
         new CleanWebpackPlugin('dist')
     ]
