@@ -1,0 +1,1 @@
+#randomInt{background-color:#00008b}#randomInt,#randomRange{border:1px solid #000;color:#fff;padding:5px}#randomRange{background-color:orange}@-webkit-keyframes MyAnimation{0%{left:0}50%{left:200px}to{left:20px}}@keyframes MyAnimation{0%{left:0}50%{left:200px}to{left:20px}}#randomRange .example.is-animating{-webkit-animation:MyAnimation 2s;animation:MyAnimation 2s}

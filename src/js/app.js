@@ -1,5 +1,4 @@
 import 'jquery';
-import 'bootstrap';
 import '../css/main.scss';
 
 import { RandomGenerator } from './random-generator';

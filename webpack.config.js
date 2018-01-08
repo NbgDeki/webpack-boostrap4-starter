@@ -13,7 +13,8 @@ var extractPlugin = new ExtractTextPlugin("[name].bundle.css", {
 module.exports = {
     entry: {
         app: './src/js/app.js',
-        about: './src/js/about.js'
+        about: './src/js/about.js',
+        common: './src/js/common.js',
     },
     output: {
         path: path.join(__dirname, "dist"),
@@ -90,11 +91,11 @@ module.exports = {
             filename: 'users.html',
             template: 'src/users.html'
         }),
-        new webpack.optimize.CommonsChunkPlugin({
+        /*new webpack.optimize.CommonsChunkPlugin({
             name: "commons",
             filename: "commons.js",
             chunks: ['app', 'about']
-        }),
+        }),*/
         new CleanWebpackPlugin('dist')
     ]
 };
