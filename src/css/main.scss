@@ -14,4 +14,16 @@
     border: 1px solid black;
     color: white;
     padding: 5px;
+
+    /*test*/
+
+    @keyframes MyAnimation {
+        0% { left: 0; }
+        50% { left: 200px; }
+        100% { left: 20px; }
+    }
+
+    .example.is-animating {
+        animation: MyAnimation 2s; /* IE >9, Fx >15, Op >12.0 */
+    }
 }

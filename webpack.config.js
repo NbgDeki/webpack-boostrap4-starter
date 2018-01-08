@@ -38,6 +38,7 @@ module.exports = {
                 use: extractPlugin.extract({
                     use: [
                         'css-loader',
+                        'autoprefixer-loader?safe=true',
                         {
                             loader: 'postcss-loader', // Run post css actions
                             options: {
