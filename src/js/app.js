@@ -1,7 +1,6 @@
 import 'jquery';
 import '../css/main.scss';
 
-
 import { RandomGenerator } from './random-generator';
 
 const outputParagraph = $('#outputParagraph');
