@@ -1,6 +1,14 @@
 import 'jquery';
 import '../css/main.scss';
 
+
+import fontawesome from '@fortawesome/fontawesome';
+import solid from '@fortawesome/fontawesome-free-solid';
+
+// Add the icon to the library so you can use it in your page
+fontawesome.library.add(solid.faUser);
+
+
 import { RandomGenerator } from './random-generator';
 
 const outputParagraph = $('#outputParagraph');

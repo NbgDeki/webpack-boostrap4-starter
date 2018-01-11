@@ -6,15 +6,14 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var webpack = require('webpack');
 
-var extractPlugin = new ExtractTextPlugin("[name].bundle.css", {
+/*var extractPlugin = new ExtractTextPlugin("[name].bundle.css", {
     //filename: 'main.css'
-});
+});*/
+var extractPlugin = new ExtractTextPlugin('style.css');
 
 module.exports = {
     entry: {
         app: './src/js/app.js',
-        about: './src/js/about.js',
-        common: './src/js/common.js',
     },
     output: {
         path: path.join(__dirname, "dist"),
