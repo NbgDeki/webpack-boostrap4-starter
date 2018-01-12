@@ -3,10 +3,11 @@ import '../css/main.scss';
 
 
 import fontawesome from '@fortawesome/fontawesome';
-import solid from '@fortawesome/fontawesome-free-solid';
+import faUser from '@fortawesome/fontawesome-free-solid/faUser';
+import faFlag from '@fortawesome/fontawesome-free-solid/faFlag';
 
 // Add the icon to the library so you can use it in your page
-fontawesome.library.add(solid.faUser);
+fontawesome.library.add(faUser, faFlag);
 
 
 import { RandomGenerator } from './random-generator';
